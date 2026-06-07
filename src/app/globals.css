@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --surface: #0b0b0c;
+  --foreground: #f5f2ea;
+  --muted: #a7a29a;
+  --champagne: #c8a96a;
+  --bronze: #a8793d;
+  --champagne-light: #e0c995;
+  --font-en: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-fa: "Vazirmatn", Tahoma, sans-serif;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-en);
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-en);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--champagne-light);
+  outline-offset: 4px;
+}
+
+.font-en {
+  font-family: var(--font-en);
+}
+
+.font-fa,
+.font-persian {
+  font-family: var(--font-fa);
+  letter-spacing: 0;
+  line-height: 1.95;
+}
+
+.display-title {
+  font-family: var(--font-en);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.hero-name {
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.section-title {
+  font-family: var(--font-en);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.body-copy {
+  max-width: 64ch;
+  line-height: 1.75;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-surface {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 44%),
+    rgba(11, 11, 12, 0.9);
+  transition:
+    border-color 240ms var(--ease-premium),
+    background-color 240ms var(--ease-premium),
+    box-shadow 240ms var(--ease-premium);
+}
+
+.project-surface:hover {
+  background:
+    linear-gradient(145deg, rgba(200, 169, 106, 0.075), transparent 48%),
+    rgba(11, 11, 12, 0.96);
+}
+
+.project-grid-glow {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(118deg, #f5f2ea 0%, #d6bf8d 44%, #a8793d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-panel {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012)),
+    rgba(8, 8, 9, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 70px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(16px);
+}
+
+@supports (text-wrap: pretty) {
+  .body-copy,
+  .font-fa {
+    text-wrap: pretty;
+  }
+}
+
+.gold-line {
+  background: linear-gradient(90deg, transparent, rgba(200, 169, 106, 0.7), transparent);
+}
+
+::selection {
+  background: var(--champagne);
+  color: #050505;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
