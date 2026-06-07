@@ -1,0 +1,47 @@
+ALI KAZEMI
+Computer Engineering Student & Junior Developer
+Location: Iran / Remote
+
+PROFILE
+Computer Engineering student and junior developer focused on practical projects,
+clean interfaces, real-world problem solving, and continuous improvement.
+
+PROJECT AREAS
+- TCM diagnostic log and regression analysis with Python
+- React and TypeScript web/mobile interface concepts
+- Python desktop tools with SQLite
+- WordPress and WooCommerce store planning
+- ESP32 and Arduino IoT experiments
+- Academic programming and engineering projects
+
+TECHNICAL SKILLS
+Frontend:
+React, Next.js, TypeScript, Tailwind CSS, Framer Motion
+
+Mobile:
+Flutter basics, React Native / Expo experiments, Capacitor Android
+
+Backend & Data:
+Python, SQLite, pandas, Excel processing
+
+CMS & eCommerce:
+WordPress, WooCommerce
+
+IoT & Embedded:
+ESP32, Arduino, RF433, OLED, relay control
+
+Tools:
+Git, GitHub, VS Code, Android Studio, Codex
+
+EDUCATION & PRACTICE
+- Computer Engineering Student
+- Junior Developer / Project Builder
+- IT & Network Support Practice
+- Self-directed software and hardware projects
+
+CONTACT
+Email: Placeholder
+GitHub: Placeholder
+LinkedIn: Placeholder
+
+No private contact details are included in this public placeholder CV.
