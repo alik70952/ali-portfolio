@@ -86,16 +86,16 @@ export function Hero() {
 
           <motion.div
             variants={heroReveal}
-            className="relative mt-7 w-full max-w-[25rem] sm:mt-8 lg:hidden"
+            className="relative mt-7 w-[clamp(20rem,calc(100vw-2.5rem),24rem)] max-w-full sm:mt-8 lg:hidden"
           >
             <div className="relative rounded-lg border border-white/[0.1] bg-[#0b0b0c]/85 p-2 shadow-[0_24px_65px_rgba(0,0,0,0.42)]">
-              <div className="relative h-[clamp(12rem,56vw,15.5rem)] max-h-[15.5rem] min-h-[12rem] overflow-hidden rounded-md sm:h-[18rem] sm:max-h-[18rem]">
+              <div className="relative aspect-[4/5] w-full max-h-[28.5rem] overflow-hidden rounded-md">
                 <Image
                   src="/images/ali-portrait-1.png"
                   alt="Portrait of Ali Kazemi"
                   fill
                   sizes="(max-width: 1023px) 90vw, 0px"
-                  className="object-cover object-[52%_27%] saturate-[0.8] contrast-[1.04]"
+                  className="object-cover object-[52%_30%] saturate-[0.8] contrast-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-transparent opacity-60" />
                 <p className="absolute bottom-4 left-4 right-4 font-mono text-[9px] uppercase tracking-[0.14em] text-[#d1bb8a] sm:bottom-5 sm:left-5 sm:right-5 sm:tracking-[0.18em]">
