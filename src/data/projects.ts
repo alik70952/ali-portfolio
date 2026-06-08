@@ -6,6 +6,8 @@ export type Project = {
   highlights: string[];
   technologies: string[];
   featured?: boolean;
+  previewImage?: string;
+  previewPosition?: string;
 };
 
 export const projects: Project[] = [
@@ -36,6 +38,23 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    title: "Swiss Car Display",
+    category: "Automotive Web Platform",
+    description:
+      "A premium automotive display-upgrade website for the Swiss market, presenting Apple CarPlay and Android Auto retrofit options through a polished, brand-led browsing experience.",
+    persianSummary:
+      "وب‌سایت معرفی و انتخاب سیستم‌های نمایش خودرو، اپل کارپلی و اندروید اتو برای بازار سوئیس.",
+    highlights: [
+      "Vehicle-brand selection experience",
+      "Responsive retrofit service presentation",
+      "Clear consultation and contact journeys",
+      "Premium dark automotive visual system",
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive UI"],
+    previewImage: "/project-assets/swiss-car-display/hero.png",
+    previewPosition: "center top",
+  },
+  {
     title: "Premium Restaurant App",
     category: "Frontend / Mobile UI",
     description:
@@ -63,7 +82,13 @@ export const projects: Project[] = [
       "Snack and inventory tracking",
       "Monthly reports and desktop GUI workflow",
     ],
-    technologies: ["Python", "SQLite", "Tkinter", "ttkbootstrap", "Data Management"],
+    technologies: [
+      "Python",
+      "SQLite",
+      "Tkinter",
+      "ttkbootstrap",
+      "Data Management",
+    ],
   },
   {
     title: "Iranian Online Store in Switzerland",
@@ -79,6 +104,8 @@ export const projects: Project[] = [
       "Theme evaluation and customization planning",
     ],
     technologies: ["WordPress", "WooCommerce", "UI/UX Planning", "eCommerce"],
+    previewImage: "/project-assets/iranian-store/hero.png",
+    previewPosition: "center top",
   },
   {
     title: "ESP32 / Arduino IoT Experiments",
@@ -108,6 +135,12 @@ export const projects: Project[] = [
       "Compiler grammar exercises",
       "Structured academic reports and slide content",
     ],
-    technologies: ["MATLAB", "BI", "IoT", "Compiler Design", "Technical Writing"],
+    technologies: [
+      "MATLAB",
+      "BI",
+      "IoT",
+      "Compiler Design",
+      "Technical Writing",
+    ],
   },
 ];
