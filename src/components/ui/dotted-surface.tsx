@@ -96,7 +96,7 @@ export function DottedSurface() {
       size: isMobile ? 0.045 : 0.038,
       sizeAttenuation: true,
       transparent: true,
-      opacity: reducedMotion ? (isMobile ? 0.24 : 0.16) : isMobile ? 0.26 : 0.23,
+      opacity: reducedMotion ? (isMobile ? 0.34 : 0.16) : isMobile ? 0.4 : 0.23,
       vertexColors: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
@@ -188,8 +188,8 @@ export function DottedSurface() {
 
       surface.position.y = -1.35 + scrollDepth * 0.11;
       surface.position.z = -scrollDepth * 0.12;
-      const heroOpacity = isMobile ? 0.26 : 0.23;
-      const lowerSectionOpacity = isMobile ? 0.18 : 0.135;
+      const heroOpacity = isMobile ? 0.4 : 0.23;
+      const lowerSectionOpacity = isMobile ? 0.28 : 0.135;
       material.opacity = THREE.MathUtils.lerp(
         material.opacity,
         THREE.MathUtils.lerp(
@@ -368,7 +368,7 @@ export function DottedSurface() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 opacity-70"
+      className="pointer-events-none absolute inset-0 z-0 opacity-90 sm:opacity-70"
     />
   );
 }
