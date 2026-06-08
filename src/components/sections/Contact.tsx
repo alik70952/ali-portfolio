@@ -3,10 +3,10 @@
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
-  ContactRound,
   GitBranch,
   Mail,
-  MapPin,
+  MessageCircle,
+  Send,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -14,30 +14,34 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "your.email@example.com",
-    href: "mailto:your.email@example.com",
-    ariaLabel: "Send an email to your.email@example.com",
+    value: "alik70952@gmail.com",
+    href: "mailto:alik70952@gmail.com",
+    ariaLabel: "Send an email to Ali Kazemi at alik70952@gmail.com",
+    external: false,
   },
   {
     icon: GitBranch,
     label: "GitHub",
-    value: "github.com/your-username",
-    href: "https://github.com/your-username",
-    ariaLabel: "Open GitHub profile placeholder",
+    value: "github.com/alik70952",
+    href: "https://github.com/alik70952",
+    ariaLabel: "Open Ali Kazemi's GitHub profile",
     external: true,
   },
   {
-    icon: ContactRound,
-    label: "LinkedIn",
-    value: "linkedin.com/in/your-username",
-    href: "https://linkedin.com/in/your-username",
-    ariaLabel: "Open LinkedIn profile placeholder",
+    icon: Send,
+    label: "Telegram",
+    value: "@isthisjustice",
+    href: "https://t.me/isthisjustice",
+    ariaLabel: "Message Ali Kazemi on Telegram",
     external: true,
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: "Iran / Remote",
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "+989015092674",
+    href: "https://wa.me/989015092674",
+    ariaLabel: "Message Ali Kazemi on WhatsApp",
+    external: true,
   },
 ];
 
@@ -76,8 +80,8 @@ export function Contact() {
                 ارتباط باشید.
               </p>
               <motion.a
-                href="mailto:your.email@example.com"
-                aria-label="Email Ali Kazemi at the placeholder email address"
+                href="mailto:alik70952@gmail.com"
+                aria-label="Email Ali Kazemi at alik70952@gmail.com"
                 whileHover={reduceMotion ? undefined : { y: -3 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                 className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#c8a96a] px-6 py-3 text-sm font-semibold text-[#090807] shadow-[0_14px_40px_rgba(168,121,61,0.2)] transition-colors duration-200 hover:bg-[#d4ba83]"
@@ -90,21 +94,6 @@ export function Contact() {
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {contactItems.map((item, index) => {
                 const Icon = item.icon;
-                const content = (
-                  <>
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c8a96a]/18 bg-[#c8a96a]/[0.045] text-[#c8a96a]">
-                      <Icon size={17} strokeWidth={1.55} aria-hidden="true" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#6f6a63]">
-                        {item.label}
-                      </p>
-                      <p className="mt-1 break-all text-sm text-[#c6bfb5]">
-                        {item.value}
-                      </p>
-                    </div>
-                  </>
-                );
 
                 return (
                   <motion.div
@@ -118,26 +107,30 @@ export function Contact() {
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        aria-label={item.ariaLabel}
-                        target={item.external ? "_blank" : undefined}
-                        rel={item.external ? "noreferrer" : undefined}
-                        className="group flex min-h-[4.8rem] items-center gap-4 rounded-2xl border border-white/[0.075] bg-black/25 p-4 transition-[border-color,background-color,transform] duration-200 hover:border-[#c8a96a]/28 hover:bg-[#c8a96a]/[0.035]"
-                      >
-                        {content}
-                        <ArrowUpRight
-                          size={15}
-                          aria-hidden="true"
-                          className="ml-auto shrink-0 text-[#625e58] transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c8a96a]"
-                        />
-                      </a>
-                    ) : (
-                      <div className="flex min-h-[4.8rem] items-center gap-4 rounded-2xl border border-white/[0.075] bg-black/25 p-4">
-                        {content}
+                    <a
+                      href={item.href}
+                      aria-label={item.ariaLabel}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noreferrer" : undefined}
+                      className="group flex min-h-[4.8rem] items-center gap-4 rounded-2xl border border-white/[0.075] bg-black/25 p-4 transition-[border-color,background-color,transform] duration-200 hover:border-[#c8a96a]/28 hover:bg-[#c8a96a]/[0.035]"
+                    >
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c8a96a]/18 bg-[#c8a96a]/[0.045] text-[#c8a96a]">
+                        <Icon size={17} strokeWidth={1.55} aria-hidden="true" />
                       </div>
-                    )}
+                      <div className="min-w-0">
+                        <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#6f6a63]">
+                          {item.label}
+                        </p>
+                        <p className="mt-1 break-all text-sm text-[#c6bfb5]">
+                          {item.value}
+                        </p>
+                      </div>
+                      <ArrowUpRight
+                        size={15}
+                        aria-hidden="true"
+                        className="ml-auto shrink-0 text-[#625e58] transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#c8a96a]"
+                      />
+                    </a>
                   </motion.div>
                 );
               })}

@@ -15,6 +15,8 @@ import {
   Database,
   Download,
   Mail,
+  MessageCircle,
+  Send,
 } from "lucide-react";
 import {
   getRevealVariants,
@@ -163,6 +165,32 @@ export function Hero() {
               <Download size={16} aria-hidden="true" />
               Download CV
             </motion.a>
+            <div className="flex min-w-0 gap-3 min-[390px]:col-span-2 sm:col-span-1">
+              <motion.a
+                href="https://t.me/isthisjustice"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Message Ali Kazemi on Telegram"
+                whileHover={reduceMotion ? undefined : { y: -3 }}
+                whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-[#c8a96a]/22 bg-[#c8a96a]/[0.035] px-4 py-3 text-xs font-medium text-[#d8c18f] shadow-[0_10px_30px_rgba(168,121,61,0.08)] transition-[border-color,background-color,color] duration-200 hover:border-[#c8a96a]/45 hover:bg-[#c8a96a]/[0.075] hover:text-[#f0dfb8] sm:flex-none"
+              >
+                <Send size={15} strokeWidth={1.7} aria-hidden="true" />
+                Telegram
+              </motion.a>
+              <motion.a
+                href="https://wa.me/989015092674"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Message Ali Kazemi on WhatsApp"
+                whileHover={reduceMotion ? undefined : { y: -3 }}
+                whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-[#c8a96a]/22 bg-[#c8a96a]/[0.035] px-4 py-3 text-xs font-medium text-[#d8c18f] shadow-[0_10px_30px_rgba(168,121,61,0.08)] transition-[border-color,background-color,color] duration-200 hover:border-[#c8a96a]/45 hover:bg-[#c8a96a]/[0.075] hover:text-[#f0dfb8] sm:flex-none"
+              >
+                <MessageCircle size={15} strokeWidth={1.7} aria-hidden="true" />
+                WhatsApp
+              </motion.a>
+            </div>
           </motion.div>
 
           <motion.dl

@@ -1,8 +1,37 @@
+import { GitBranch, Mail, MessageCircle, Send } from "lucide-react";
+
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
+];
+
+const contactLinks = [
+  {
+    label: "Email Ali Kazemi",
+    href: "mailto:alik70952@gmail.com",
+    icon: Mail,
+    external: false,
+  },
+  {
+    label: "Open Ali Kazemi's GitHub profile",
+    href: "https://github.com/alik70952",
+    icon: GitBranch,
+    external: true,
+  },
+  {
+    label: "Message Ali Kazemi on Telegram",
+    href: "https://t.me/isthisjustice",
+    icon: Send,
+    external: true,
+  },
+  {
+    label: "Message Ali Kazemi on WhatsApp",
+    href: "https://wa.me/989015092674",
+    icon: MessageCircle,
+    external: true,
+  },
 ];
 
 export function Footer() {
@@ -41,9 +70,34 @@ export function Footer() {
           </ul>
         </nav>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] md:text-right">
-          Learning, building, improving
-        </p>
+        <div className="md:text-right">
+          <div className="flex flex-wrap items-center gap-2 md:justify-end">
+            {contactLinks.map((link) => {
+              const Icon = link.icon;
+
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  aria-label={link.label}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noreferrer" : undefined}
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] text-[#8f887d] transition-[border-color,background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#c8a96a]/35 hover:bg-[#c8a96a]/[0.06] hover:text-[#d8c18f]"
+                >
+                  <Icon
+                    size={16}
+                    strokeWidth={1.6}
+                    aria-hidden="true"
+                    className="transition-transform duration-200 group-hover:scale-105"
+                  />
+                </a>
+              );
+            })}
+          </div>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em]">
+            Learning, building, improving
+          </p>
+        </div>
       </div>
     </footer>
   );
