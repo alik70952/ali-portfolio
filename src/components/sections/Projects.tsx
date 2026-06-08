@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, type ComponentType } from "react";
 import {
   motion,
@@ -21,7 +22,6 @@ import {
   Monitor,
   Radio,
   Sheet,
-  ShoppingBag,
   Smartphone,
   Utensils,
   Wifi,
@@ -78,7 +78,11 @@ function PreviewHeader({
 function TcmPreview() {
   return (
     <div className="overflow-hidden rounded-md border border-white/[0.09] bg-[#050506]/95">
-      <PreviewHeader icon={Code2} label="TCM validation pipeline" meta="report.py" />
+      <PreviewHeader
+        icon={Code2}
+        label="TCM validation pipeline"
+        meta="report.py"
+      />
       <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
         <div className="border-b border-white/[0.07] p-4 sm:p-5 lg:border-b-0 lg:border-r">
           <div className="space-y-2.5 sm:space-y-4">
@@ -88,7 +92,9 @@ function TcmPreview() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[10px] leading-5 text-[#d5bd88]">{line.command}</p>
+                  <p className="text-[10px] leading-5 text-[#d5bd88]">
+                    {line.command}
+                  </p>
                   <p className="text-[10px] leading-4 text-[#817b72] sm:mt-1 sm:text-[9px] sm:leading-5">
                     {line.detail}
                   </p>
@@ -181,7 +187,9 @@ function RestaurantPreview() {
                   className="flex items-center gap-3 rounded-md border border-white/[0.07] bg-white/[0.025] px-3 py-3"
                 >
                   <Icon size={13} className="text-[#c8a96a]" />
-                  <span className="text-[10px] text-[#a9a298]">{item.label}</span>
+                  <span className="text-[10px] text-[#a9a298]">
+                    {item.label}
+                  </span>
                 </div>
               );
             })}
@@ -204,7 +212,11 @@ function GameClubPreview() {
 
   return (
     <div className="overflow-hidden rounded-md border border-white/[0.09] bg-[#080809]">
-      <PreviewHeader icon={Monitor} label="Club operations" meta="Live sessions" />
+      <PreviewHeader
+        icon={Monitor}
+        label="Club operations"
+        meta="Live sessions"
+      />
       <div className="grid grid-cols-3 gap-px bg-white/[0.06]">
         {[
           ["Active", "08"],
@@ -215,7 +227,9 @@ function GameClubPreview() {
             <p className="font-mono text-[7px] uppercase tracking-[0.12em] text-[#68635c]">
               {label}
             </p>
-            <p className="mt-1 text-base font-semibold text-[#e6dfd4]">{value}</p>
+            <p className="mt-1 text-base font-semibold text-[#e6dfd4]">
+              {value}
+            </p>
           </div>
         ))}
       </div>
@@ -249,70 +263,25 @@ function GameClubPreview() {
   );
 }
 
-function StorePreview() {
-  const products = [
-    ["Saffron", "CHF 12"],
-    ["Tea", "CHF 8"],
-    ["Pistachio", "CHF 16"],
-    ["Barberry", "CHF 10"],
-  ];
-
-  return (
-    <div className="overflow-hidden rounded-md border border-white/[0.09] bg-[#09090a]">
-      <PreviewHeader icon={ShoppingBag} label="Persian market" meta="Switzerland" />
-      <div className="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3 font-mono text-[7px] uppercase tracking-[0.12em] text-[#6e685f]">
-        <span className="text-[#c8a96a]">Featured</span>
-        <span>Pantry</span>
-        <span>Sweets</span>
-        <span className="ml-auto rounded-full border border-white/[0.07] px-2 py-1">
-          Cart 02
-        </span>
-      </div>
-      <div className="grid grid-cols-2 gap-2 p-3">
-        {products.map(([name, price], index) => (
-          <div
-            key={name}
-            className="rounded-md border border-white/[0.06] bg-white/[0.022] p-2.5"
-          >
-            <div
-              className={`aspect-[4/3] rounded bg-gradient-to-br ${
-                index === 0
-                  ? "from-red-900/35 to-amber-200/10"
-                  : index === 1
-                    ? "from-emerald-900/35 to-amber-100/10"
-                    : index === 2
-                      ? "from-amber-800/30 to-yellow-100/10"
-                      : "from-rose-900/30 to-red-100/10"
-              }`}
-            />
-            <div className="mt-2 flex items-end justify-between gap-2">
-              <div>
-                <p className="text-[9px] text-[#d1cbc1]">{name}</p>
-                <p className="mt-0.5 font-mono text-[7px] text-[#c8a96a]">
-                  {price}
-                </p>
-              </div>
-              <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white/[0.08] text-[#817a71]">
-                +
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function IotPreview() {
   const controls = [
     { icon: Wifi, label: "Local server", status: "192.168.4.1", active: true },
     { icon: Radio, label: "RF433 receiver", status: "Listening", active: true },
-    { icon: CircuitBoard, label: "Relay channel 01", status: "OFF", active: false },
+    {
+      icon: CircuitBoard,
+      label: "Relay channel 01",
+      status: "OFF",
+      active: false,
+    },
   ];
 
   return (
     <div className="overflow-hidden rounded-md border border-white/[0.09] bg-[#070808]">
-      <PreviewHeader icon={CircuitBoard} label="ESP32 control panel" meta="Online" />
+      <PreviewHeader
+        icon={CircuitBoard}
+        label="ESP32 control panel"
+        meta="Online"
+      />
       <div className="grid gap-3 p-4 sm:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-md border border-emerald-300/[0.12] bg-emerald-300/[0.025] p-4 font-mono">
           <div className="flex items-center justify-between text-[8px] uppercase tracking-[0.12em] text-[#657269]">
@@ -415,16 +384,46 @@ function AcademicPreview() {
   );
 }
 
-function ProjectPreview({ index }: { index: number }) {
-  switch (index) {
+function ScreenshotPreview({ project }: { project: Project }) {
+  if (!project.previewImage) {
+    return null;
+  }
+
+  return (
+    <div className="relative h-[15rem] w-full overflow-hidden rounded-md border border-white/[0.09] bg-[#070808] min-[390px]:h-[17rem] sm:h-[22rem] lg:h-[24rem]">
+      <Image
+        src={project.previewImage}
+        alt={`${project.title} website preview`}
+        fill
+        sizes="(max-width: 1024px) calc(100vw - 3.5rem), 50vw"
+        className="object-cover"
+        style={{ objectPosition: project.previewPosition ?? "center top" }}
+      />
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.04]" />
+    </div>
+  );
+}
+
+function ProjectPreview({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
+  if (project.previewImage) {
+    return <ScreenshotPreview project={project} />;
+  }
+
+  const legacyIndex = index > 0 ? index - 1 : index;
+
+  switch (legacyIndex) {
     case 0:
       return <TcmPreview />;
     case 1:
       return <RestaurantPreview />;
     case 2:
       return <GameClubPreview />;
-    case 3:
-      return <StorePreview />;
     case 4:
       return <IotPreview />;
     default:
@@ -488,7 +487,7 @@ function ProjectShowcase({
           style={{ y: stableY }}
           className="overflow-hidden rounded-md border border-white/[0.045] bg-[linear-gradient(145deg,rgba(255,255,255,0.035),rgba(255,255,255,0.008))] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.32)] sm:p-3"
         >
-          <ProjectPreview index={index} />
+          <ProjectPreview project={project} index={index} />
         </motion.div>
       </motion.div>
 
@@ -538,20 +537,22 @@ function ProjectShowcase({
             variants={staggerContainer(reduceMotion ? 0.01 : 0.055)}
             className="mt-3 grid gap-2.5"
           >
-            {project.highlights.slice(0, index === 0 ? 6 : 4).map((highlight) => (
-              <motion.li
-                key={highlight}
-                variants={reveal}
-                className="flex items-start gap-2.5 text-[13px] leading-6 text-[#a29c93]"
-              >
-                <Check
-                  size={13}
-                  className="mt-0.5 shrink-0 text-[#c8a96a]"
-                  aria-hidden="true"
-                />
-                {highlight}
-              </motion.li>
-            ))}
+            {project.highlights
+              .slice(0, index === 0 ? 6 : 4)
+              .map((highlight) => (
+                <motion.li
+                  key={highlight}
+                  variants={reveal}
+                  className="flex items-start gap-2.5 text-[13px] leading-6 text-[#a29c93]"
+                >
+                  <Check
+                    size={13}
+                    className="mt-0.5 shrink-0 text-[#c8a96a]"
+                    aria-hidden="true"
+                  />
+                  {highlight}
+                </motion.li>
+              ))}
           </motion.ul>
         </div>
 
@@ -635,8 +636,9 @@ export function Projects() {
           </div>
           <motion.div variants={reveal} className="lg:pb-1">
             <p className="body-copy max-w-md text-[15px] leading-7 text-[#9b958c]">
-              Six case studies spanning automotive validation, product interfaces,
-              desktop operations, commerce, embedded systems, and engineering work.
+              Seven case studies spanning automotive validation, product
+              interfaces, desktop operations, commerce, embedded systems, and
+              engineering work.
             </p>
           </motion.div>
         </motion.div>
