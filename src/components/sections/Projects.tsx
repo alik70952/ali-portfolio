@@ -61,14 +61,14 @@ function PreviewHeader({
   meta: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] px-4 py-3.5">
-      <div className="flex items-center gap-2.5">
+    <div className="flex items-center justify-between gap-3 border-b border-white/[0.07] px-3.5 py-3 sm:px-4 sm:py-3.5">
+      <div className="flex min-w-0 items-center gap-2.5">
         <Icon size={14} className="text-[#c8a96a]" />
-        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#a49d92]">
+        <span className="truncate font-mono text-[9px] uppercase tracking-[0.1em] text-[#a49d92] sm:tracking-[0.14em]">
           {label}
         </span>
       </div>
-      <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-[#5f5a53]">
+      <span className="shrink-0 font-mono text-[8px] uppercase tracking-[0.1em] text-[#5f5a53] sm:tracking-[0.14em]">
         {meta}
       </span>
     </div>
@@ -80,23 +80,23 @@ function TcmPreview() {
     <div className="overflow-hidden rounded-md border border-white/[0.09] bg-[#050506]/95">
       <PreviewHeader icon={Code2} label="TCM validation pipeline" meta="report.py" />
       <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="border-b border-white/[0.07] p-5 lg:border-b-0 lg:border-r">
-          <div className="space-y-4">
+        <div className="border-b border-white/[0.07] p-4 sm:p-5 lg:border-b-0 lg:border-r">
+          <div className="space-y-2.5 sm:space-y-4">
             {terminalLines.map((line, index) => (
               <div key={line.command} className="flex gap-3 font-mono">
-                <span className="text-[9px] text-[#5e594f]">
+                <span className="text-[9px] leading-5 text-[#5e594f]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[10px] text-[#d5bd88]">{line.command}</p>
-                  <p className="mt-1 text-[9px] leading-5 text-[#777169]">
+                  <p className="text-[10px] leading-5 text-[#d5bd88]">{line.command}</p>
+                  <p className="text-[10px] leading-4 text-[#817b72] sm:mt-1 sm:text-[9px] sm:leading-5">
                     {line.detail}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-5 flex flex-wrap gap-2 border-t border-white/[0.07] pt-4 font-mono text-[8px] uppercase tracking-[0.12em]">
+          <div className="mt-4 flex flex-wrap gap-2 border-t border-white/[0.07] pt-3 font-mono text-[9px] sm:mt-5 sm:pt-4 sm:text-[8px] uppercase tracking-[0.12em]">
             <span className="rounded-full border border-emerald-400/25 bg-emerald-400/[0.08] px-2.5 py-1 text-emerald-300">
               42 pass
             </span>
@@ -109,9 +109,9 @@ function TcmPreview() {
           {reportStats.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.label} className="bg-[#09090a] p-4">
+              <div key={item.label} className="bg-[#09090a] p-3 sm:p-4">
                 <Icon size={15} className="text-[#c8a96a]" />
-                <p className="mt-4 font-mono text-[8px] uppercase tracking-[0.13em] text-[#6f6a62]">
+                <p className="mt-3 font-mono text-[8px] sm:mt-4 uppercase tracking-[0.13em] text-[#6f6a62]">
                   {item.label}
                 </p>
                 <p className="mt-1 text-[11px] leading-5 text-[#d0c9be]">
@@ -128,9 +128,9 @@ function TcmPreview() {
 
 function RestaurantPreview() {
   return (
-    <div className="relative mx-auto max-w-[29rem] overflow-hidden rounded-md border border-white/[0.09] bg-[#09090a] p-5">
+    <div className="relative mx-auto max-w-[29rem] overflow-hidden rounded-md border border-white/[0.09] bg-[#09090a] p-3.5 sm:p-5">
       <div className="absolute right-0 top-0 h-28 w-28 bg-[#c8a96a]/[0.06] blur-3xl" />
-      <div className="grid grid-cols-[0.76fr_1.24fr] gap-4">
+      <div className="grid grid-cols-[0.82fr_1.18fr] gap-2.5 sm:grid-cols-[0.76fr_1.24fr] sm:gap-4">
         <div className="rounded-[1.4rem] border border-white/[0.1] bg-[#050506] p-2 shadow-2xl">
           <div className="overflow-hidden rounded-[1rem] border border-white/[0.06] bg-[#101011]">
             <div className="flex items-center justify-between px-3 py-3">
@@ -447,7 +447,7 @@ function ProjectShowcase({
     target: rowRef,
     offset: ["start end", "end start"],
   });
-  const previewY = useTransform(scrollYProgress, [0, 1], [16, -16]);
+  const previewY = useTransform(scrollYProgress, [0, 1], [8, -8]);
   const stableY: number | MotionValue<number> = reduceMotion ? 0 : previewY;
   const previewInitial = reduceMotion
     ? { opacity: 0 }
@@ -461,7 +461,7 @@ function ProjectShowcase({
       ref={rowRef}
       initial="rest"
       whileHover={reduceMotion ? undefined : "hover"}
-      className={`group relative grid min-w-0 gap-5 rounded-lg border bg-[#09090a]/90 p-3 transition-[border-color,box-shadow] duration-300 sm:p-5 lg:grid-cols-2 lg:gap-7 lg:p-7 ${
+      className={`group relative grid min-w-0 gap-6 rounded-lg border bg-[#09090a]/90 p-4 transition-[border-color,box-shadow] duration-300 sm:p-5 lg:grid-cols-2 lg:gap-7 lg:p-7 ${
         index === 0
           ? "border-[#c8a96a]/25 shadow-[0_30px_100px_rgba(66,43,20,0.16)] hover:border-[#d6bc82]/42 hover:shadow-[0_36px_110px_rgba(88,58,25,0.22)]"
           : "border-white/[0.08] hover:border-[#c8a96a]/28 hover:shadow-[0_30px_90px_rgba(0,0,0,0.34)]"
@@ -480,13 +480,13 @@ function ProjectShowcase({
           duration: reduceMotion ? 0.2 : 0.66,
           ease: premiumEase,
         }}
-        className={`min-w-0 self-center ${
+        className={`min-w-0 self-start lg:self-center ${
           isPreviewLeft ? "lg:order-1" : "lg:order-2"
         }`}
       >
         <motion.div
           style={{ y: stableY }}
-          className="rounded-md border border-white/[0.045] bg-[linear-gradient(145deg,rgba(255,255,255,0.035),rgba(255,255,255,0.008))] p-2 shadow-[0_24px_70px_rgba(0,0,0,0.32)] sm:p-3"
+          className="overflow-hidden rounded-md border border-white/[0.045] bg-[linear-gradient(145deg,rgba(255,255,255,0.035),rgba(255,255,255,0.008))] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.32)] sm:p-3"
         >
           <ProjectPreview index={index} />
         </motion.div>
@@ -520,10 +520,10 @@ function ProjectShowcase({
           )}
         </div>
 
-        <h3 className="section-title mt-5 text-[clamp(1.65rem,3vw,2.6rem)] text-[#f1ede5]">
+        <h3 className="section-title mt-5 text-[clamp(1.75rem,7.5vw,2.1rem)] text-[#f1ede5] sm:text-[clamp(1.65rem,3vw,2.6rem)]">
           {project.title}
         </h3>
-        <p className="body-copy mt-4 text-sm text-[#aaa49b] sm:text-[15px]">
+        <p className="body-copy mt-4 text-[15px] leading-7 text-[#aaa49b] sm:text-[15px]">
           {project.description}
         </p>
 
@@ -542,7 +542,7 @@ function ProjectShowcase({
               <motion.li
                 key={highlight}
                 variants={reveal}
-                className="flex items-start gap-2.5 text-xs leading-5 text-[#99938a] sm:text-[13px]"
+                className="flex items-start gap-2.5 text-[13px] leading-6 text-[#a29c93]"
               >
                 <Check
                   size={13}
@@ -560,13 +560,13 @@ function ProjectShowcase({
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={staggerContainer(reduceMotion ? 0.01 : 0.045, 0.04)}
-          className="mt-6 flex flex-wrap gap-2"
+          className="mt-6 flex flex-wrap gap-2.5"
         >
           {project.technologies.map((technology) => (
             <motion.li
               key={technology}
               variants={reveal}
-              className="rounded-full border border-white/[0.075] bg-black/30 px-2.5 py-1 font-mono text-[8px] text-[#989188]"
+              className="rounded-full border border-white/[0.075] bg-black/30 px-3 py-1.5 font-mono text-[9px] leading-4 text-[#a49d94]"
             >
               {technology}
             </motion.li>
@@ -576,7 +576,7 @@ function ProjectShowcase({
         <p
           lang="fa"
           dir="rtl"
-          className="font-fa mt-6 border-r border-[#c8a96a]/22 pr-3 text-right text-xs leading-7 text-[#7f7971]"
+          className="font-fa mt-6 border-r border-[#c8a96a]/22 pr-3 text-right text-sm leading-8 text-[#918b83]"
         >
           {project.persianSummary}
         </p>
@@ -600,7 +600,7 @@ export function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative scroll-mt-16 overflow-hidden py-24 lg:py-36"
+      className="relative scroll-mt-16 overflow-hidden py-24 sm:py-28 lg:py-36"
     >
       <motion.div
         aria-hidden="true"
@@ -614,7 +614,7 @@ export function Projects() {
           whileInView="visible"
           viewport={viewport}
           variants={staggerContainer(reduceMotion ? 0.02 : 0.08)}
-          className="grid gap-8 border-b border-white/[0.07] pb-10 lg:grid-cols-[0.62fr_0.38fr] lg:items-end lg:pb-14"
+          className="grid gap-6 border-b border-white/[0.07] pb-10 lg:grid-cols-[0.62fr_0.38fr] lg:items-end lg:pb-14"
         >
           <div>
             <motion.div variants={reveal} className="flex items-center gap-4">
@@ -634,21 +634,21 @@ export function Projects() {
             </motion.h2>
           </div>
           <motion.div variants={reveal} className="lg:pb-1">
-            <p className="body-copy max-w-md text-sm text-[#918c84] sm:text-[15px]">
+            <p className="body-copy max-w-md text-[15px] leading-7 text-[#9b958c]">
               Six case studies spanning automotive validation, product interfaces,
               desktop operations, commerce, embedded systems, and engineering work.
             </p>
           </motion.div>
         </motion.div>
 
-        <div className="relative mt-10 lg:mt-14">
+        <div className="relative mt-12 lg:mt-14">
           <div className="absolute bottom-0 left-[5px] top-0 hidden w-px bg-white/[0.07] xl:block" />
           <motion.div
             aria-hidden="true"
             style={{ scaleY: reduceMotion ? 1 : progress }}
             className="absolute bottom-0 left-[5px] top-0 hidden w-px origin-top bg-[#c8a96a] xl:block"
           />
-          <div className="space-y-8 lg:space-y-12 xl:pl-10">
+          <div className="space-y-12 sm:space-y-10 lg:space-y-12 xl:pl-10">
             {projects.map((project, index) => (
               <div key={project.title} className="relative min-w-0">
                 <span className="absolute -left-[2.38rem] top-10 hidden h-[11px] w-[11px] rounded-full border border-[#c8a96a]/60 bg-[#090909] xl:block" />

@@ -168,3 +168,20 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+@media (max-width: 639px) {
+  .body-copy {
+    line-height: 1.75;
+  }
+
+  .font-fa,
+  .font-persian {
+    line-height: 2;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero-name {
+    font-size: clamp(2.35rem, 11.75vw, 2.75rem);
+  }
+}

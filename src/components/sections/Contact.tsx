@@ -50,7 +50,7 @@ export function Contact() {
       className="mx-auto w-full max-w-7xl scroll-mt-16 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
     >
       <Reveal>
-        <div className="relative overflow-hidden rounded-lg border border-white/[0.09] bg-[linear-gradient(135deg,rgba(200,169,106,0.08),rgba(11,11,12,0.96)_35%,rgba(8,8,8,0.98))] px-6 py-14 shadow-[0_35px_100px_rgba(0,0,0,0.4)] sm:px-10 sm:py-20 lg:px-14">
+        <div className="relative overflow-hidden rounded-lg border border-white/[0.09] bg-[linear-gradient(135deg,rgba(200,169,106,0.08),rgba(11,11,12,0.96)_35%,rgba(8,8,8,0.98))] px-5 py-14 shadow-[0_35px_100px_rgba(0,0,0,0.4)] sm:px-10 sm:py-20 lg:px-14">
           <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#c8a96a]/35 to-transparent" />
 
           <div className="relative grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
@@ -70,7 +70,7 @@ export function Contact() {
               <p
                 lang="fa"
                 dir="rtl"
-                className="font-fa mt-3 max-w-2xl text-right text-sm leading-8 text-[#8d877f]"
+                className="font-fa mt-3 max-w-2xl text-right text-[15px] leading-8 text-[#99938a]"
               >
                 برای همکاری، فرصت‌های توسعه جونیور و پروژه‌های فنی می‌توانید با من در
                 ارتباط باشید.

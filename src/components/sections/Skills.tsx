@@ -51,7 +51,7 @@ export function Skills() {
               Tools for building across layers.
             </h2>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-[#918c84] lg:justify-self-end">
+          <p className="max-w-xl text-[15px] leading-7 text-[#9b958c] lg:justify-self-end">
             A practical toolkit developed through coursework, experiments, and
             project-based learning, from interface work to data and embedded systems.
           </p>
