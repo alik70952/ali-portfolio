@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Premium dark automotive visual system",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive UI"],
-    previewImage: "/project-assets/swiss-car-display/hero.png",
+    previewImage: "/project-assets/swiss-car-display/hero2.png",
     previewPosition: "center top",
   },
   {
