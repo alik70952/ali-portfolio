@@ -58,7 +58,7 @@ export function InteractiveBackground() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#050505]"
     >
-      <div className="absolute inset-x-0 top-0 h-[115vh] [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]">
+      <div className="absolute inset-x-0 top-0 h-[115vh] opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)] sm:opacity-100">
         <DottedSurface />
       </div>
       <motion.div
@@ -69,7 +69,7 @@ export function InteractiveBackground() {
           opacity: reduceMotion ? 0.48 : 0.78,
         }}
       />
-      <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center,transparent_15%,rgba(0,0,0,0.78)_100%)]" />
+      <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_center,transparent_8%,rgba(0,0,0,0.86)_100%)] sm:bg-[radial-gradient(circle_at_center,transparent_15%,rgba(0,0,0,0.78)_100%)]" />
       <div className="absolute -left-36 top-20 z-20 h-[34rem] w-[34rem] rounded-full bg-[#a8793d]/[0.06] blur-[120px]" />
       <div className="absolute right-[-12rem] top-[-8rem] z-20 h-[38rem] w-[38rem] rounded-full bg-[#c8a96a]/[0.08] blur-[130px]" />
     </div>

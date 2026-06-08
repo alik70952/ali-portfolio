@@ -49,9 +49,9 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative mx-auto flex min-h-screen w-full max-w-7xl scroll-mt-6 items-center overflow-hidden px-5 pb-24 pt-20 sm:px-8 lg:overflow-visible lg:px-12 lg:pt-24"
+      className="relative mx-auto flex min-h-screen w-full max-w-7xl scroll-mt-6 items-center overflow-hidden px-5 pb-24 pt-16 sm:px-8 sm:pt-20 lg:overflow-visible lg:px-12 lg:pt-24"
     >
-      <div className="grid w-full items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] xl:gap-20">
+      <div className="grid w-full items-center gap-12 sm:gap-14 lg:grid-cols-[1.08fr_0.92fr] xl:gap-20">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -60,17 +60,17 @@ export function Hero() {
         >
           <motion.div
             variants={heroReveal}
-            className="mb-7 inline-flex max-w-full items-center gap-3 rounded-full border border-[#c8a96a]/25 bg-[#c8a96a]/[0.055] px-4 py-2.5 text-[10px] font-medium tracking-[0.08em] text-[#d8c18f] sm:text-xs"
+            className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-full border border-[#c8a96a]/25 bg-[#c8a96a]/[0.055] px-3.5 py-2.5 text-[11px] font-medium leading-4 tracking-[0.04em] text-[#d8c18f] sm:mb-7 sm:gap-3 sm:px-4 sm:text-xs sm:tracking-[0.08em]"
           >
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c8a96a] shadow-[0_0_14px_rgba(200,169,106,0.75)]" />
             Open to junior developer roles &amp; freelance projects
           </motion.div>
 
           <motion.div variants={heroReveal}>
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.26em] text-[#827866]">
+            <p className="mb-4 font-mono text-[10px] uppercase leading-5 tracking-[0.16em] text-[#827866] sm:tracking-[0.26em]">
               Computer engineering · practical development
             </p>
-            <h1 className="hero-name display-title whitespace-nowrap text-[clamp(2.85rem,12.5vw,8rem)] text-[#f5f2ea] sm:text-[clamp(4.5rem,9vw,8rem)]">
+            <h1 className="hero-name display-title whitespace-nowrap text-[clamp(2.75rem,12vw,4rem)] text-[#f5f2ea] sm:text-[clamp(4.5rem,9vw,8rem)]">
               Ali <span className="text-gold-gradient">Kazemi</span>
             </h1>
           </motion.div>
@@ -79,26 +79,26 @@ export function Hero() {
             variants={heroReveal}
             lang="fa"
             dir="rtl"
-            className="font-fa mt-6 w-fit text-2xl font-medium leading-relaxed text-[#c7c0b5] sm:text-3xl"
+            className="font-fa mt-5 w-fit text-2xl font-medium leading-relaxed text-[#c7c0b5] sm:mt-6 sm:text-3xl"
           >
             علی کاظمی
           </motion.p>
 
           <motion.div
             variants={heroReveal}
-            className="relative mt-8 w-full max-w-md lg:hidden"
+            className="relative mt-7 w-full max-w-[25rem] sm:mt-8 lg:hidden"
           >
-            <div className="relative rounded-lg border border-white/[0.1] bg-[#0b0b0c]/85 p-2 shadow-[0_28px_80px_rgba(0,0,0,0.48)]">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-md sm:aspect-[4/3]">
+            <div className="relative rounded-lg border border-white/[0.1] bg-[#0b0b0c]/85 p-2 shadow-[0_24px_65px_rgba(0,0,0,0.42)]">
+              <div className="relative h-[clamp(12rem,56vw,15.5rem)] max-h-[15.5rem] min-h-[12rem] overflow-hidden rounded-md sm:h-[18rem] sm:max-h-[18rem]">
                 <Image
                   src="/images/ali-portrait-1.png"
                   alt="Portrait of Ali Kazemi"
                   fill
                   sizes="(max-width: 1023px) 90vw, 0px"
-                  className="object-cover object-[52%_30%] saturate-[0.8] contrast-[1.04]"
+                  className="object-cover object-[52%_27%] saturate-[0.8] contrast-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-transparent opacity-60" />
-                <p className="absolute bottom-5 left-5 right-5 font-mono text-[9px] uppercase tracking-[0.18em] text-[#d1bb8a]">
+                <p className="absolute bottom-4 left-4 right-4 font-mono text-[9px] uppercase tracking-[0.14em] text-[#d1bb8a] sm:bottom-5 sm:left-5 sm:right-5 sm:tracking-[0.18em]">
                   Iran · Available remotely
                 </p>
               </div>
@@ -107,7 +107,7 @@ export function Hero() {
 
           <motion.div
             variants={heroReveal}
-            className="mt-8 min-w-0 max-w-3xl"
+            className="mt-7 min-w-0 max-w-3xl sm:mt-8"
           >
             <p className="text-xl font-medium leading-8 text-[#eeeae2] sm:text-2xl">
               Computer Engineering Student &amp; Junior Developer
@@ -120,7 +120,7 @@ export function Hero() {
             <p
               lang="fa"
               dir="rtl"
-              className="font-fa mt-4 max-w-full break-words text-right text-sm leading-8 text-[#918b82] sm:max-w-2xl sm:text-base"
+              className="font-fa mt-4 max-w-full break-words text-right text-[15px] leading-8 text-[#9d978e] sm:max-w-2xl sm:text-base"
             >
               دانشجوی مهندسی کامپیوتر و توسعه‌دهنده جونیور، علاقه‌مند به ساخت
               پروژه‌های واقعی در حوزه وب، موبایل، اینترنت اشیا و تحلیل داده‌های
@@ -130,7 +130,7 @@ export function Hero() {
 
           <motion.div
             variants={heroReveal}
-            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+            className="mt-8 grid grid-cols-1 gap-3 min-[390px]:grid-cols-2 sm:mt-9 sm:flex sm:flex-row sm:flex-wrap"
           >
             <motion.a
               href="#projects"
@@ -158,7 +158,7 @@ export function Hero() {
               aria-label="Download Ali Kazemi's CV as a text file"
               whileHover={reduceMotion ? undefined : { y: -3 }}
               whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-transparent px-5 py-3 text-sm font-medium text-[#a7a29a] transition-colors duration-200 hover:border-white/[0.07] hover:text-[#d8c18f]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-transparent px-5 py-3 text-sm font-medium text-[#a7a29a] transition-colors duration-200 hover:border-white/[0.07] hover:text-[#d8c18f] min-[390px]:col-span-2 sm:col-span-1"
             >
               <Download size={16} aria-hidden="true" />
               Download CV
@@ -167,14 +167,14 @@ export function Hero() {
 
           <motion.dl
             variants={heroReveal}
-            className="mt-10 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/[0.07] pt-6"
+            className="mt-10 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/[0.07] pt-6"
           >
             {metrics.map((metric) => (
               <div key={metric.label} className="min-w-0">
                 <dt className="text-xl font-semibold text-[#e9dfca] sm:text-2xl">
                   {metric.value}
                 </dt>
-                <dd className="mt-1 text-[10px] leading-4 text-[#77726b] sm:text-xs">
+                <dd className="mt-1 text-[11px] leading-[1.45] text-[#817b73] sm:text-xs">
                   {metric.label}
                 </dd>
               </div>
