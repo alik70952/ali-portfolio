@@ -28,14 +28,18 @@ export function About() {
       </Reveal>
 
       <div className="grid gap-6 lg:grid-cols-[0.7fr_1.3fr]">
-        <Reveal direction="right" amount={0.25} className="relative min-h-[28rem]">
-          <div className="relative h-full min-h-[28rem] overflow-hidden rounded-lg border border-white/[0.09] bg-[#0b0b0c]">
+        <Reveal
+          direction="right"
+          amount={0.25}
+          className="relative mx-auto aspect-[4/5] w-full max-w-[25rem] max-h-[31.25rem] lg:mx-0 lg:aspect-auto lg:max-h-none lg:max-w-none lg:min-h-[28rem]"
+        >
+          <div className="relative h-full min-h-0 overflow-hidden rounded-lg border border-white/[0.09] bg-[#0b0b0c] lg:min-h-[28rem]">
             <Image
               src="/images/ali-portrait-2.png"
               alt="Ali Kazemi outdoors"
               fill
               sizes="(max-width: 1024px) 100vw, 38vw"
-              className="object-cover object-[61%_35%] saturate-[0.7] contrast-[1.05]"
+              className="object-cover object-[60%_34%] saturate-[0.7] contrast-[1.05]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/10 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
